@@ -16,7 +16,11 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getAllMessages",
             query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
-    )
+    ),
+    @NamedQuery(
+            name = "getMessagesCount",
+            query = "SELECT COUNT(m) FROM Message AS m"
+            )
 })
 @Table(name = "messages")
 public class Message {
@@ -76,7 +80,7 @@ public class Message {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-    
-    
+
+
 
 }
